@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Safe Market</title>
+</h:head>
+<h:body>
+	<div align="center" style="margin-top: 130pt">
+		<h2 align="center">Safe Market - Delivery Express</h2>
+	</div>
+
+	<h:form>
+		<p:messages id="msgs" />
+		<div align="center" id="divMenu" style="margin-top: 20pt;">
+			<p:panelGrid columns="2" border="2">
+				<p:outputLabel value="#{msgs.labelUsuarioNomeUsuario}"></p:outputLabel>
+				<p:inputText required="true" value="#{loginMB.usuario.nomeUsuario}"
+					placeholder="#{msgs.labelUsuarioNomeUsuario}"></p:inputText>
+
+				<p:outputLabel value="#{msgs.labelUsuarioSenha}"></p:outputLabel>
+				<p:password required="true" value="#{loginMB.usuario.senha}"
+					placeholder="#{msgs.labelUsuarioSenha}"></p:password>
+			</p:panelGrid>
+		</div>
+
+		<div align="center">
+			<br></br>
+			<p:commandButton value="#{msgs.botaoLogin}"
+				action="#{loginMB.efetuarLogin}">
+			</p:commandButton>
+
+			<br></br> <br></br> <a dir="rtl" name="Registro"
+				href="usuario/CadastroUsuario.xhtml" title="Registre-se"
+				accesskey="Registre-se" shape="poly">Ainda não é Cadastrado?
+				Registre-se aqui</a> <br></br> <br></br> #{loginMB.mensagem}
+		</div>
+		<p:messages errorStyle="font-color: red"></p:messages>
+	</h:form>
+</h:body>
+</html>
